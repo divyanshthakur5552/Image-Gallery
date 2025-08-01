@@ -1,0 +1,164 @@
+/* Import a clean system font stack similar to Pinterest */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f1faee;
+  margin: 0;
+}
+
+/* Main container - Masonry layout for different dimensions */
+.box {
+  column-count: 4;
+  column-gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Individual image card container */
+.image-container {
+  background: #f1faee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Hover effects for cards */
+.image-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling - Maintains aspect ratio */
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Subtle hover zoom */
+.image-container:hover .image {
+  transform: scale(1.02);
+}
+
+/* Text (likes + description) styling */
+.image-container p {
+  margin: 8px 12px;
+  font-size: 14px;
+  color: #000; /* Always black */
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+  .box {
+    column-count: 3;
+    column-gap: 18px;
+    padding: 18px;
+  }
+
+  .image-container {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    column-count: 2;
+    column-gap: 15px;
+    padding: 15px;
+  }
+
+  .image-container {
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    column-count: 1;
+    column-gap: 0;
+    padding: 12px;
+  }
+
+  .image-container {
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+}
+
+/* Loading state */
+.image-container.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  min-height: 200px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pagination button container */
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px 0 40px;
+}
+
+/* Buttons */
+.btn button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn button:hover {
+  background-color: #ad081b;
+  transform: translateY(-2px);
+}
+
+/* Optional: Remove dark mode override for text */
+@media (prefers-color-scheme: dark) {
+  .image-container {
+    background: #f1faee;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Keep text black even in dark mode */
+  .image-container p {
+    color: #000;
+  }
+}

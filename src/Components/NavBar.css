@@ -1,0 +1,88 @@
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: #a8dadc;
+  padding: 15px 7%;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.logo-text {
+  cursor: pointer;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #457b9d;
+  padding: 10px 20px;
+  border-radius: 50px;
+  justify-self: center;
+}
+.search-box input::placeholder {
+  color: #1d3557;
+  opacity: 0.7; /* Makes it slightly transparent */
+  font-style: italic; /* Subtle styling */
+}
+
+.search-box input {
+  padding: 6px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #000000;
+  font-size: 18px;
+  width: 200px;
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  color: #000000;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-self: end;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+ul li {
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
