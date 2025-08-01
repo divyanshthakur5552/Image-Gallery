@@ -1,11 +1,52 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+/* About.css */
+
 .about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f1faee;
+  color: #1d3557;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #e63946;
+}
+
+/* Accordion container fix */
+.about-container .accordion {
+  margin: 0 auto;
   width: 100%;
-  min-height: 100vh;
-  background: #1d3557;
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px 16px;
+  }
+
+  .about-container h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 24px 12px;
+  }
+
+  .about-container h1 {
+    font-size: 22px;
+  }
+
+  .about-container .accordion {
+    padding: 0 4px;
+  }
 }

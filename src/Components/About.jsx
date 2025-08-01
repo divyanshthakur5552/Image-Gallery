@@ -3,10 +3,10 @@ import "./About.css";
 import Accordion from "./Accordion";
 export default function About() {
   return (
-    <div className="about-container">
+    <>
       <NavBar />
-      <h1>About Us</h1>
+      <div className="about-container"></div>
       <Accordion />
-    </div>
+    </>
   );
 }

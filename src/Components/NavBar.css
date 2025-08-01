@@ -1,3 +1,4 @@
+/* Navbar container */
 .navbar {
   width: 100%;
   display: grid;
@@ -6,15 +7,21 @@
   background-color: #a8dadc;
   padding: 15px 7%;
   gap: 20px;
+
+  overflow: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.navbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
-
   gap: 10px;
 }
-
 .logo-icon {
   font-size: 2rem;
   width: 2rem;
@@ -24,12 +31,12 @@
 .logo-text {
   cursor: pointer;
 }
-
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
 }
 
+/* Search box */
 .search-box {
   display: flex;
   align-items: center;
@@ -40,10 +47,9 @@
 }
 .search-box input::placeholder {
   color: #1d3557;
-  opacity: 0.7; /* Makes it slightly transparent */
-  font-style: italic; /* Subtle styling */
+  opacity: 0.7;
+  font-style: italic;
 }
-
 .search-box input {
   padding: 6px;
   background: transparent;
@@ -53,14 +59,18 @@
   font-size: 18px;
   width: 200px;
 }
-
 .search-icon {
   font-size: 1.5rem;
   color: #000000;
   cursor: pointer;
   margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.search-icon:hover {
+  transform: scale(1.08);
 }
 
+/* Right side nav */
 .navbar-right {
   display: flex;
   align-items: center;
@@ -68,6 +78,7 @@
   justify-self: end;
 }
 
+/* Nav items */
 ul {
   display: flex;
   list-style: none;
@@ -75,32 +86,29 @@ ul {
   padding: 0;
   gap: 20px;
 }
-
 ul li {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
 }
 
+/* Theme toggle icon */
 .toggle-icon {
   font-size: 1.5rem;
   cursor: pointer;
 }
-/* NavLink default style */
+
+/* NavLink styles */
 ul li a {
   color: black;
   text-decoration: none;
   transition: 0.2s ease-in-out;
 }
-
-/* Active link */
 ul li a.active {
   color: #1d3557;
   font-weight: bold;
   text-decoration: underline;
 }
-
-/* Hover effect */
 ul li a:hover {
   color: #1d3557;
   text-decoration: underline;
