@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Box from "./Box.Jsx";
-import NavBar from "./Navbar";
+import NavBar from "./NavBar.jsx";
 import axios from "axios";
 
 const API_URL = "https://api.unsplash.com/search/photos";

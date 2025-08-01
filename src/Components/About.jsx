@@ -1,4 +1,4 @@
-import NavBar from "./Navbar";
+import NavBar from "./NavBar.jsx";
 import "./About.css";
 import Accordion from "./Accordion";
 export default function About() {

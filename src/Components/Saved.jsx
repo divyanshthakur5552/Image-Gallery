@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import NavBar from "./Navbar";
+import NavBar from "./NavBar.jsx";
 import "./Saved.css";
 import { FaHeart } from "react-icons/fa";
 
