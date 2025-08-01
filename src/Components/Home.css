@@ -4,8 +4,11 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 .container {
   width: 100%;
   min-height: 100vh;
   background: #f1faee;
+  padding-top: 100px; /* space for fixed navbar so it doesn't cover content */
+  overflow-x: hidden;
 }
