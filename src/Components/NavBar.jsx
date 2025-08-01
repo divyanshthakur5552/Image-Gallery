@@ -1,6 +1,7 @@
 import { BsImageAlt } from "react-icons/bs";
 import { IoSearchCircleOutline } from "react-icons/io5";
 import { FaRegSun } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 import "./NavBar.css";
 const API_URL = "https://api.unsplash.com/search/photos";
@@ -37,8 +38,16 @@ export default function Navbar({
 
         <div className="navbar-right">
           <ul>
-            <li>Home</li>
-            <li>About</li>
+            <li>
+              <NavLink to="/" end>
+                Home
+              </NavLink>
+            </li>
+            <li>Saved</li>
+            <li>Recently Liked</li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
           </ul>
           <FaRegSun className="toggle-icon" onClick={toggleTheme} />
         </div>

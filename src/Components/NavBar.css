@@ -86,3 +86,22 @@ ul li {
   font-size: 1.5rem;
   cursor: pointer;
 }
+/* NavLink default style */
+ul li a {
+  color: black;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+/* Active link */
+ul li a.active {
+  color: #1d3557;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Hover effect */
+ul li a:hover {
+  color: #1d3557;
+  text-decoration: underline;
+}

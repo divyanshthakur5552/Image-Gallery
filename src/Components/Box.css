@@ -1,11 +1,11 @@
-/* Import a clean system font stack similar to Pinterest */
+/* Base font and background */
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #f1faee;
   margin: 0;
 }
 
-/* Main container - Masonry layout for different dimensions */
+/* Masonry layout */
 .box {
   column-count: 4;
   column-gap: 20px;
@@ -14,11 +14,11 @@ body {
   margin: 0 auto;
 }
 
-/* Individual image card container */
+/* Image card */
 .image-container {
   background: #f1faee;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; /* Keeps everything inside the card */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -26,15 +26,16 @@ body {
   break-inside: avoid;
   display: inline-block;
   width: 100%;
+  position: relative;
 }
 
-/* Hover effects for cards */
+/* Hover effect */
 .image-container:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Image styling - Maintains aspect ratio */
+/* Image scaling */
 .image {
   width: 100%;
   height: auto;
@@ -42,20 +43,46 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Subtle hover zoom */
 .image-container:hover .image {
   transform: scale(1.02);
 }
 
-/* Text (likes + description) styling */
+/* Profile + username */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 0;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+/* Text: likes and description */
 .image-container p {
   margin: 8px 12px;
   font-size: 14px;
-  color: #000; /* Always black */
+  color: #000;
   font-weight: 500;
   line-height: 1.4;
   word-break: break-word;
 }
+
+/* Loader container */
 .loader-container {
   display: flex;
   justify-content: center;
@@ -64,7 +91,33 @@ body {
   width: 100%;
 }
 
-/* Responsive columns */
+/* Pagination button container */
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px 0 40px;
+}
+
+/* Buttons */
+.btn button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn button:hover {
+  background-color: #ad081b;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
 @media (max-width: 1200px) {
   .box {
     column-count: 3;
@@ -103,7 +156,7 @@ body {
   }
 }
 
-/* Loading state */
+/* Optional: loading shimmer effect */
 .image-container.loading {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -120,33 +173,7 @@ body {
   }
 }
 
-/* Pagination button container */
-.btn {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 30px 0 40px;
-}
-
-/* Buttons */
-.btn button {
-  background-color: #e60023;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn button:hover {
-  background-color: #ad081b;
-  transform: translateY(-2px);
-}
-
-/* Optional: Remove dark mode override for text */
+/* Dark mode support (text stays black) */
 @media (prefers-color-scheme: dark) {
   .image-container {
     background: #f1faee;
@@ -157,8 +184,21 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   }
 
-  /* Keep text black even in dark mode */
-  .image-container p {
+  .image-container p,
+  .username {
     color: #000;
   }
+}
+.btn-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px 8px; /* left-right padding + bottom padding */
+  margin-top: 4px;
+}
+
+.like-btn-container,
+.save-btn-container {
+  display: flex;
+  align-items: center;
 }
